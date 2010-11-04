@@ -1,4 +1,4 @@
-classdef Figures
+classdef Figures < handle
     properties
         figuremap = struct;
         plots_visible = 'on';
