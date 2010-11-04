@@ -1,0 +1,12 @@
+\usepackage{amsfonts}
+%\usepackage{amsmath}
+\usepackage[fleqn]{amsmath}
+\usepackage{amssymb}
+\usepackage[swedish]{babel}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern} 
+\usepackage{graphicx}
+\usepackage{float,multicol,epsfig}
+\usepackage{verbatim}
+\usepackage{rotating}

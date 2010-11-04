@@ -1,0 +1,46 @@
+% Main file for collecting the chapters of the report
+%
+% Author: Jonatan Olofsson, jonatan.olofsson@gmail.com
+%
+
+%% Specify document type
+\documentclass[10pt,twoside,a4paper]{report}
+
+%% Specify report metadata
+\title{Laborationsrapport \\ Systemidentifiering \\ TSRT78}
+\date{12 oktober 2010}
+%\author{Jonatan Olofsson-- jonol402@student.liu.se \\Joakim Gebart -- joage546@student.liu.se}
+\author{ID 91}
+\newcommand{\pdfauthor}{ID 91}
+\newcommand{\pdftitle}{TSRT78 - Systemidentifikation}
+\newcommand{\pdfsubject}{Laborationsrapport}
+\newcommand{\pdfkeywords}{rapport, tsrt78}
+
+
+%% Include helper files
+\input{include/uses.inc}
+\input{include/pdf.inc}
+\input{include/pheader.inc}
+
+
+%% Begin bringing the document together
+\begin{document}
+
+%% Display titlepage
+\maketitle
+
+%% Display a table of contents. 
+% Note that the document has to be built twice after updating 
+% the content, for this table to be updated.
+\newpage
+\tableofcontents
+
+%% Include the introduction
+\input{introduction/introduction.tex}
+
+%% Include the bibliography at the end of the report
+\input{bibliography/bibliography.tex}
+
+%% Include all appendices
+\appendix
+\input{Appendices/appendices.tex}
