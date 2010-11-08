@@ -18,10 +18,10 @@
 
 
 %% Include helper files
-\include{include/uses.inc}
-\include{include/pdf.inc}
-\include{include/pheader.inc}
-\include{include/functions.inc}
+\input{include/uses.inc}
+\input{include/pdf.inc}
+\input{include/pheader.inc}
+\input{include/functions.inc}
 
 
 %% Begin bringing the document together
@@ -37,11 +37,13 @@
 \tableofcontents
 
 %% Include the introduction
-\include{introduction/introduction.tex}
+\include*{introduction/introduction}
 
 %% Include the bibliography at the end of the report
-\include{bibliography/bibliography.tex}
+\include*{bibliography/bibliography}
 
 %% Include all appendices
 \appendix
-\include{Appendices/appendices.tex}
+\include*{Appendices/appendices}
+
+\end{document}
