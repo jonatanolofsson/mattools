@@ -24,7 +24,7 @@ function save(this, destination, format)
     
     names = fieldnames(this.figuremap);
     for f = 1:length(names)
-        filen = [destination '/' names(f)];
-        saveas(filen, file, format);
+        filen = [destination '/' names{f}];
+        saveas(this.figuremap.(names{f}), filen, format);
     end
 end
