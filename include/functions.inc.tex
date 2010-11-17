@@ -1,10 +1,19 @@
+\newcommand{\currentchapter}{}
 \newcommand{\fig}[4]{
   \begin{figure}[h]
     \centering
-    \includegraphics[width=1\linewidth]{figures/#1}
+    \includegraphics[width=1\linewidth]{\currentchapter/figures/#1}
     \caption{#2}
     \label{#3}
   \end{figure}
 }
 
+%% Math functions
 \renewcommand{\sin}[1]{sin\left(#1\right)}
+\renewcommand{\cos}[1]{cos\left(#1\right)}
+
+%% Initialize new chapter
+\newcommand{\newchapter}[1]{
+	\renewcommand{\currentchapter}{#1}
+	\include*{#1/#1}
+}
