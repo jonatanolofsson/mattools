@@ -16,6 +16,9 @@ function generate_report(show_plots, rdir)
                     disp(mfile);
                     run(mfile);
                     figures.save([listing(f).name '/figures']);
+                    if strcmp(show_plots, 'off')
+                        figures.closeAll();
+                    end
                 end
             end
         end

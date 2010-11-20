@@ -7,7 +7,9 @@ classdef Figures < handle
     end
     methods
         fig = getFigure(this, figure_name);
+        registerFigure(this, name, fig);
         toPDF(this, figures, filename);
         save(this, destination, format);
+        closeAll(this);
     end
 end

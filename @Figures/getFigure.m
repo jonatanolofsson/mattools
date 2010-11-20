@@ -18,8 +18,7 @@
 %
 function fig = getFigure(this, figure_name)
     if ~isfield(this.figuremap, figure_name)
-        this.figuremap.(figure_name) = figure('Visible', this.plots_visible);
-        orient landscape;
+        this.registerFigure(figure('Visible', this.plots_visible), figure_name);
     end
     fig = this.figuremap.(figure_name);
 end
