@@ -24,6 +24,11 @@ function register_chapter {
   sed -i "s/%%::$TAG::%%/\newchapter{$1}\\n%%::$TAG::%%/"
 }
 
+if [ $# -le 2] ; then
+  echo "Not enough arguments."; exit
+fi
+
+
 case $1 in
   "init")
     cp -R $SKELDIR/{include,$INDEXFILE} .
@@ -55,3 +60,5 @@ case $1 in
     $MATLAB -r $GENERATE_SCRIPT
   ;;
 esac
+
+exit
