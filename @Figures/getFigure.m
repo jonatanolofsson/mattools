@@ -21,4 +21,5 @@ function fig = getFigure(this, figure_name)
         this.registerFigure(figure('Visible', this.plots_visible), figure_name);
     end
     fig = this.figuremap.(figure_name);
+    figure(fig);
 end
