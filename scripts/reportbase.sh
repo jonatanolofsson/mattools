@@ -2,7 +2,7 @@
 
 SKELDIR="/etc/reportbase/skel"
 INDEXFILE="Report.tex"
-MKMATLAB=false
+MKMATLAB=0
 MATLAB="matlab -nojvm"
 GENERATE_SCRIPT="generate_report_x"
 
@@ -29,12 +29,13 @@ function rename {
   if [ -d "$2/matlab" ] && [ -f "$2/matlab/$1.m" ] ; then
     mv "$2/matlab/$1.m" "$2/matlab/$2.m"
   fi
+  sed -i "s/\\\\newchapter{$1}/\\\\newchapter{$2}/" $INDEXFILE
 }
 
 function help {
   echo "Valid commands are: init, add [chapter(s)], generate and rename [old new]"
   echo "Valid flags for the add command are"
-  echo " -a   Adds chapter as appendix"
+  echo " -a   Adds following chapters as appendices. Resets m-flag to off."
   echo " -m   Toggles between creating matlab directories or not. By default off"
   echo ""
   echo "reportbase is made by Jonatan Olofsson"
@@ -68,7 +69,7 @@ case $1 in
       case $arg in
       "-a")
         TAG="appendices"
-        MKMATLAB=false
+        MKMATLAB=0
         ;;
       "-m")
         MKMATLAB=$(( ! $MKMATLAB ))
