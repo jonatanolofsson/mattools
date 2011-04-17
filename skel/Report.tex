@@ -1,0 +1,47 @@
+
+% Main file for collecting the chapters of the report
+%
+% Author: Jonatan Olofsson, jonatan.olofsson@gmail.com
+%
+
+%% Specify document type
+\documentclass[10pt,twoside,a4paper]{report}
+
+%% Specify report metadata
+\title{}
+\date{}
+\author{}
+\newcommand{\lang}{english}
+\newcommand{\pdfauthor}{}
+\newcommand{\pdftitle}{}
+\newcommand{\pdfsubject}{}
+\newcommand{\pdfkeywords}{}
+
+
+%% Include helper files
+\input{include/uses.inc}
+\input{include/pdf.inc}
+\input{include/pheader.inc}
+\input{include/functions.inc}
+
+
+%% Begin bringing the document together
+\begin{document}
+
+%% Display titlepage
+\maketitle
+
+%% Display a table of contents.
+% Note that the document has to be built twice after updating
+% the content, for this table to be updated.
+\newpage
+\tableofcontents
+
+%%::chapters::%%
+
+%% Include all appendices
+\appendix
+
+%%::appendices::%%
+
+\end{document}
