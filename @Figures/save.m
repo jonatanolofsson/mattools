@@ -20,8 +20,8 @@
 %   [ none ]
 %
 function save(this, destination, format)
-    if nargin < 3, format = 'psc2'; end;
-    
+    if nargin < 3, format = 'epsc2'; end;
+
     names = fieldnames(this.figuremap);
     for f = 1:length(names)
         filen = [destination '/' names{f}];
