@@ -18,7 +18,7 @@
 %
 function fig = getFigure(this, figure_name)
     if ~isfield(this.figuremap, figure_name)
-        this.registerFigure(figure('Visible', this.plots_visible), figure_name);
+        this.registerFigure(figure('Visible', this.plots_visible, 'NumberTitle', 'Off', 'Name', figure_name), figure_name);
     end
     fig = this.figuremap.(figure_name);
     figure(fig);
