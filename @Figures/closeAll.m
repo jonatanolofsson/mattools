@@ -19,6 +19,12 @@
 % Changelog:
 %   [ none ]
 %
-function closeall(this)
-    close(struct2array(this.figuremap))
+function closeAll(this)
+    a = struct2array(this.figuremap);
+    for i = a
+        try
+            close(i)
+        end
+    end
+    this.figuremap = struct();
 end
