@@ -5,7 +5,7 @@ function generate_report(dirs, show_plots)
         dirs = {};
         dirs_ = dir(pwd);
         for f = 1:length(dirs_);
-            dirs{f} = dirs_(f).name
+            dirs{f} = dirs_(f).name;
         end
     elseif ischar(dirs)
         dirs = {dirs};
