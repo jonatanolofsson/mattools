@@ -1,0 +1,19 @@
+mattools
+-------------------------------------------------------------
+This script was released under GPL license spring 2011 and is as such
+free to use but without guarantees of support. See file COPYING for more
+information on GPL.
+
+The toolbox contains various handy functions when using Matlab, including
+name-based figure-handling with connections to the LaTeX report base
+"reportbase" found at https://github.com/jonatanolofsson/reportbase
+
+
+Best regards,
+Jonatan Olofsson
+[jonatan.olofsson, gmail]
+-------------------------------------------------------------
+
+1) Installation
+To install mattools, simply make sure the directory where you put it is
+in Matlab's path
