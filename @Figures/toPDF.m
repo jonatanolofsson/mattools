@@ -34,16 +34,16 @@
 %	2010-11     Implemented function in the Figures class
 %
 function toPDF(this, filename, figs)
-    mdir = [regexprep(fileparts(mfilename('fullpath')), '/\\$', '') '/'];
+    mdir = [regexprep(fileparts(fileparts(mfilename('fullpath'))), '/\\$', '') '/'];
     gs = 'gs';
-	
-    files = cell(3, length(figs));
     
     if nargin < 3, figs = struct2cell(this.figuremap); end;
+	
+    files = cell(3, length(figs));
 
     for f=1:length(figs)
         files(:,f) = {'"'; [mdir 'work/fig2pdftmp__' num2str(f) '__.ps']; '" '};
-        if is_integer(figs{f})
+        if ishandle(figs{f})
             cfigure = figs{f};
         elseif isfield(this.figuremap, figs{f})
             cfigure = this.figuremap.(figs{f});

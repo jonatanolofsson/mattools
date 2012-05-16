@@ -31,7 +31,7 @@
 %
 % Changelog:
 %   [ none ]
-function generate_report(dirs, show_plots)
+function generate(dirs, show_plots)
     if nargin < 1 || isempty(dirs)
         dirs = {};
         dirs_ = dir(pwd);

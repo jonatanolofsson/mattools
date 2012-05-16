@@ -33,9 +33,10 @@
 % Changelog:
 %   [ none ]
 %
-function fig = getFigure(this, figure_name)
-    if ~isfield(this.figuremap, figure_name)
-        this.registerFigure(figure('Visible', this.plots_visible, 'NumberTitle', 'Off', 'Name', figure_name), figure_name);
+function fig = getFigure(this, figure_title)
+    figure_name = genvarname(figure_title);
+    if ~isfield(this.figuremap, figure_name) || isempty(findobj('type','figure','name',figure_title)) || ~ishandle(findobj('type','figure','name',figure_title))
+        this.registerFigure(figure('Visible', this.plots_visible, 'NumberTitle', 'Off', 'Name', figure_title), figure_name);
     end
     fig = this.figuremap.(figure_name);
     figure(fig);
